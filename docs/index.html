@@ -706,12 +706,115 @@ footer p {
     line-height: 1.6;
     color: #555; /* Gray for body text */
 }
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #007bff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f8f9fa;
+}
+
+/* Mobile Responsiveness */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #007bff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
 
 
 
 </style>
 <body>
-
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">INNOVATEX</a>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                &#9776; <!-- Hamburger Icon -->
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#future-plans">Vision</a></li>
+                <li><a href="#certifications">Cert</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#video-demonstration">Video Demo</a></li>
+                <li><a href="#code">Codes</a></li>
+                <li><a href="#research-paper">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <!-- Background Image -->
     <div class="background-img">
         <img src="https://sweagro.com/wp-content/uploads/2024/06/AdobeStock_728648201-scaled.jpg" alt="Background Image" class="background-img">
@@ -727,7 +830,7 @@ footer p {
     </div>
 
     <!-- About Me Section -->
-    <div class="about-me">
+    <div id="about-me" class="about-me">
         <h2>About Me</h2>
         <p>I’m Osei-Bonsu Cephas, a proud General Science graduate from Konongo Odumase Senior High School. Curiosity has always been my compass, guiding me to explore the unknown and challenge myself to uncover the ‘why’ behind everything I encounter. With an unquenchable thirst for knowledge, I see every day as an opportunity to learn and grow. As a passionate tech enthusiast, I’m driven by a bigger purpose: to harness the power of technology in ways that protect our planet and ensure a sustainable future for generations to come</p>
     </div>
@@ -760,7 +863,7 @@ footer p {
 
 
     <!-- Interests Section -->
-    <div class="interests">
+    <div id="interests" class="interests">
         <h2>Interests</h2>
         <ul>
             <li>STEM Education</li>
@@ -810,7 +913,7 @@ footer p {
                 <li>Raised awareness about water conservation and provided access to clean water for underprivileged communities, benefiting various communities through outreach programs, filtration system installations, and water donation drives</li>
             </ul>
         </div>
-        <div class="future-plans">
+        <div id="future-plans" class="future-plans">
             <h2>Future Plans and Ambition</h2>
             <div class="plan-section">
                 <h3>1. Mitigating Weather Conditions and Air Quality</h3>
@@ -1014,7 +1117,7 @@ footer p {
         <div id="projects">
             <h2>My Projects</h2>
         
-            <div class="project-item">
+            <div id="code" class="project-item">
                 <h3>Smart Dustbin</h3>
                 <p>An innovative dustbin to help keep the library tidy.</p>
                 <a href="https://github.com/Cephas0001/CODES/blob/main/CODES%20FOR%20ALL%20MY%20PROJECTS/DUSTBIN/DUSTBIN.ino" class="project-button">View Code on GitHub</a>
